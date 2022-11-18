@@ -18,14 +18,15 @@
 
 #include <iostream>
 #include "SIGN.h"
+#include "keeper.h"
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
     std::cout << "Hello World!\n";
-    int x[] = { 11, 23, 33 };
-    SIGN *sg = new SIGN[3];
-    cin >> sg[0];
-    cout << sg[0];
-   
+    keeper k;
+    //cin >> k.sg[0];
+    k.Read();
+    cout << k.get_sign()[0];
+    cout << k.get_sign()[1];
 }

@@ -74,7 +74,6 @@ void SIGN::set_date_of_birth(int* date_of_birth)
 	*this->date_of_birth = *date_of_birth;
 }
 
-
 ostream& operator<<(ostream& os, const SIGN& sg)
 {
 	os << sg.surname <<
