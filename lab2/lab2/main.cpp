@@ -58,6 +58,14 @@ void menu_output(short menu) {
 	if (menu == 7)
 		set_color(RED);
 	else set_color(WHITE);
+	cout << "поиск по фамилии\n";
+	if (menu == 8)
+		set_color(RED);
+	else set_color(WHITE);
+	cout << "найти самое длинное слово в файле и указать, сколько раз оно встретилось\n";
+	if (menu == 9)
+		set_color(RED);
+	else set_color(WHITE);
 	cout << "Exit\n" << endl;
 }
 int main()
@@ -82,13 +90,13 @@ int main()
 		switch (key) {
 		case 80: //вниз
 			func++;
-			if (func > 7)
+			if (func > 9)
 				func = 1;
 			break;
 		case 72: //вверх
 			func--;
 			if (func < 1)
-				func = 7;
+				func = 9;
 			break;
 		case 13: //enter
 			ENTER_ = true;
@@ -108,7 +116,7 @@ int main()
 				break;
 			case 3:
 				for (int i = 0; i < k.get_size(); i++) {
-					cout << k.get_sign()[i];
+					cout << k.get_sign()[i] << endl;
 				}
 				_getch();
 				break;
@@ -130,9 +138,18 @@ int main()
 				_getch();
 				break;
 			case 7:
+				cout << "Введите фамилию: " << endl;
+				cin >> str;
+				k.search_info_by_surname(str);
+				_getch();
+				break;
+			case 8:
+				break;
+			case 9:
 				exit = true;
 				break;
 			}
+
 		}
 
 		menu_output(func);
