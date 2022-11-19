@@ -20,14 +20,24 @@ public:
 	~keeper();
 
 	SIGN* get_sign();
-
+	int get_size();
+	
+	void add_sign();
 	void add_sign(string surname, string name, string sign, int* date);
 	void delete_sign();
+
+	//
+	void change_data(string surname);
 	//сохранение и чтение файла
 	void Save();
 	void Read();
 
 	//сортировка
-	void sort(SIGN* sg, int size); // TODO
+	void sort(); // проверить
+
+	void search_info_by_surname(string surname);
+
+	// задание 2
+	// 
 };
 

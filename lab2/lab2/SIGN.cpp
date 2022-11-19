@@ -71,7 +71,9 @@ void SIGN::set_sign(string sign)
 
 void SIGN::set_date_of_birth(int* date_of_birth)
 {
-	*this->date_of_birth = *date_of_birth;
+	this->date_of_birth[0] = date_of_birth[0];
+	this->date_of_birth[1] = date_of_birth[1];
+	this->date_of_birth[2] = date_of_birth[2];
 }
 
 ostream& operator<<(ostream& os, const SIGN& sg)

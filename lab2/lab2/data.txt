@@ -1,2 +1,4 @@
-bonar rere oven 4 4 5 
-kir rkek orjk 1 2 3 
+bondar ger tr 1 2 1
+bondar ger tr 2 2 1
+bondar ger tr 4 5 6
+fokina anna kozerog 9 10 2020

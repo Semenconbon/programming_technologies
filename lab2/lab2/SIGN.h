@@ -31,6 +31,5 @@ public:
 	//перегруженные операторы
 	friend ostream& operator<<(ostream& os, const SIGN& sg);
 	friend istream& operator>>(istream& is,  SIGN& sg);
-	
 };
 
