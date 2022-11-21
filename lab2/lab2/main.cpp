@@ -108,8 +108,15 @@ int main()
 		if (ENTER_) { //запуск функций
 			switch (func) {
 			case 1: 
+				try{
 				k.add_sign();
 				cin >> k.get_sign()[k.get_size() - 1];
+				}
+				catch (invalid_argument& e)
+				{
+					cerr << e.what() << endl;
+					return -1;
+				}
 				break;
 			case 2: 
 				k.delete_sign();
@@ -144,6 +151,8 @@ int main()
 				_getch();
 				break;
 			case 8:
+				k.find_biggest_word();
+				_getch();
 				break;
 			case 9:
 				exit = true;

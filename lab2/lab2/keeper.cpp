@@ -117,6 +117,8 @@ void keeper::Read()
 			//проверка на пропуск \n
 		}
 	}
+	in.close();
+
 }
 void keeper::delete_sign()
 {
@@ -170,14 +172,47 @@ void keeper::sort() {
 		}
 	}
 }
+void keeper::find_biggest_word()
+{
+	string word = "";
+	string biggest_word = word;
+	int count = 0;
+
+	ifstream in("data.txt");
+	if (in.is_open())
+	{
+		while (!in.eof()) {
+			in >> word;
+			if (word.length() > biggest_word.length()) {
+				biggest_word = word;
+				count = 1;
+			}
+			else if (word == biggest_word) {
+				biggest_word = word;
+				count++;
+			}
+		}
+	}
+	if (biggest_word == "") { cout << "В файле нет слов" << endl; return; }
+	cout << "Самое большое слово: " << biggest_word << endl;
+	cout << "Оно повторяется: " << count << endl;
+
+	in.close();
+}
 void keeper::change_data(string surname) {
 	for (int i = 0; i < size; i++) {
 		if (sg[i].get_surname() == surname) {
 			cout << sg[i] << endl;
 			cout << "Введите его новые данные:" << endl;
 			cout << "_______________________________" << endl;
+			try {
 			cin >> sg[i];
-			
+			}
+			catch (invalid_argument& e)
+			{
+				cerr << e.what() << endl;
+				return;
+			}
 		}
 		cout << "Новые данные:" << endl;
 		cout << sg[i] << endl;

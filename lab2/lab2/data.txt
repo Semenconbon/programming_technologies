@@ -1,4 +1,2 @@
-bondar ger tr 1 2 1
-bondar ger tr 2 2 1
-bondar ger tr 4 5 6
-fokina anna kozerog 9 10 2020
+bondar semyon oven 8 4 2002
+Petrov Petr kozerog 9 10 1978

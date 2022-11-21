@@ -86,7 +86,7 @@ ostream& operator<<(ostream& os, const SIGN& sg)
 		"." << sg.date_of_birth[2];
 	return os;
 }
-istream& operator>>(istream& is,  SIGN& sg)
+istream& operator>>(istream& is, SIGN& sg)
 {
 	cout << "\n¬ведите фамилию" << endl;
 	is >> sg.surname;
@@ -94,9 +94,22 @@ istream& operator>>(istream& is,  SIGN& sg)
 	is >> sg.name;
 	cout << "¬ведите знак зодиака" << endl;
 	is >> sg.sign;
-	cout << "¬ведите дату рождени€ (день, мес€ц, год - записывать через пробел)\n" << endl;
+	cout << "¬ведите дату рождени€ (день, мес€ц, год - записывать через пробел)" << endl;
 	is >> sg.date_of_birth[0];
 	is >> sg.date_of_birth[1];
 	is >> sg.date_of_birth[2];
+	if (
+		sg.date_of_birth[0] <= 0 || sg.date_of_birth[0] > 31 ||
+		sg.date_of_birth[1] <= 0 || sg.date_of_birth[1] > 12 ||
+		sg.date_of_birth[2] <= 0 || sg.date_of_birth[2] > 2023
+		) 
+	{
+		throw invalid_argument(
+			"ќшибка при вводе данных: Ќекорректный ввод."
+			"ƒатой не могут быть буквы, "
+			"ƒней не может быть меньше нул€ или больше 31, "
+			"мес€цев меньше 0 или больше 12, лет больше 2023");
+	}
+	
 	return is;
 }

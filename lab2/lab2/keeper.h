@@ -38,6 +38,6 @@ public:
 	void search_info_by_surname(string surname);
 
 	// задание 2
-	//void find_biggest_word();
+	void find_biggest_word();
 };
 
